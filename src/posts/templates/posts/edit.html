@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Modifier l'article</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Modifier article</h1>
+    <a href="{% url 'posts:home' %}">Revenir à l'accueil</a>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-submit">Enregistrer</button>
+    </form>
+{% endblock %}
+
